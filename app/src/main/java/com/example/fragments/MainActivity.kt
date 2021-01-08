@@ -1,17 +1,8 @@
 package com.example.fragments
 
-import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.example.fragments.databinding.ActivityMainBinding
-import com.example.fragments.databinding.FragmentFirstBinding
-import com.example.fragments.databinding.FragmentSecondBinding
-import com.example.fragments.utils.ArgumentManager
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +17,8 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().apply {
                 setReorderingAllowed(true)
-                add(R.id.fragmentContainerView, firstFragment)
                 add(R.id.fragmentContainerView, secondFragment)
+                add(R.id.fragmentContainerView, firstFragment)
                 setPrimaryNavigationFragment(firstFragment)
                 commit()
             }
